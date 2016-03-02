@@ -10,10 +10,7 @@ namespace Sample.AddIn.FunctionOnly
         public void AutoOpen()
         {
             try
-            {
-                // Settings the path to the Add-In
-                AddinContext.Settings.AddinPath = (string)XlCall.Excel(XlCall.xlGetName);
-                
+            {   
                 // The Excel Application object
                 AddinContext.ExcelApp = new Application(null, ExcelDnaUtil.Application);
             }

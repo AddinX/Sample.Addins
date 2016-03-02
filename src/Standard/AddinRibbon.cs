@@ -1,5 +1,4 @@
 ﻿using System.Runtime.InteropServices;
-using System.Threading;
 using AddinX.Ribbon.Contract;
 using AddinX.Ribbon.Contract.Command;
 using AddinX.Ribbon.ExcelDna;
@@ -22,7 +21,7 @@ namespace Sample.AddIn.Standard
                                     .LargeSize().ImageMso("HappyFace").ShowLabel()
                                     .Screentip("First button for test purpose");
                                 i.AddButton("Table").SetId("TableCmd")
-                                    .NormalSize();
+                                    .NormalSize().NoImage().ShowLabel();
                             });
                     }));
 
@@ -31,18 +30,16 @@ namespace Sample.AddIn.Standard
         protected override void CreateRibbonCommand(IRibbonCommands cmds)
         {
             cmds.AddButtonCommand("TestCmd")
-                .IsEnabled(() => true).IsVisible(() => true)
                 .Action(() => AddinContext.MainController.Sample.ShowMessage());
             
-            cmds.AddButtonCommand("TableCmd").IsVisible(() => true)
+            cmds.AddButtonCommand("TableCmd")
                 .Action(() => AddinContext.MainController.Report.CreateTable());
         }
 
         public override void OnClosing()
         {
             AddinContext.TokenCancellationSource.Cancel();
-            Thread.Sleep(100);
-
+            
             AddinContext.ExcelApp.DisposeChildInstances(true);
             AddinContext.ExcelApp = null;
 
