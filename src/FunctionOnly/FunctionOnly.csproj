@@ -30,14 +30,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="AddinX.Configuration.Contract, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\AddinX.Configuration.Contract.1.0.0\lib\net451\AddinX.Configuration.Contract.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="AddinX.Configuration.Implementation, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\AddinX.Configuration.Implementation.1.0.0\lib\net451\AddinX.Configuration.Implementation.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="ExcelApi, Version=1.7.3.0, Culture=neutral, PublicKeyToken=26cf6d85ba68fa54, processorArchitecture=MSIL">
       <HintPath>..\..\packages\NetOffice.Excel.1.7.3.0\lib\net45\ExcelApi.dll</HintPath>
       <EmbedInteropTypes>False</EmbedInteropTypes>
