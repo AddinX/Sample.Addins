@@ -1,4 +1,5 @@
 ﻿using System.Threading;
+using AddinX.Configuration.Contract;
 using AddinX.Logging;
 using Autofac;
 using NetOffice.ExcelApi;
@@ -19,6 +20,8 @@ namespace Sample.AddIn.Standard
         public static IContainer Container { get; set; }
 
         public static Application ExcelApp { get; set; }
+
+        public static IConfigurationManager ConfigManager { get; set; }
 
         public static MainController MainController => ctrls ?? (ctrls = Container.Resolve<MainController>());
     }

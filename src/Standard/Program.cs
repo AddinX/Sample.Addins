@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Threading;
+using AddinX.Configuration.Implementation;
 using ExcelDna.Integration;
 using ExcelDna.Logging;
 using NetOffice.ExcelApi;
@@ -13,6 +14,8 @@ namespace Sample.AddIn.Standard
         {
             try
             {   
+                AddinContext.ConfigManager = new ConfigurationManagerWrapper();
+
                 // Settings the path to the Add-In
                 AddinContext.Settings.AddinPath = (string) XlCall.Excel(XlCall.xlGetName);
                 
